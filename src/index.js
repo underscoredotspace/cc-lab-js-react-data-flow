@@ -1,6 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import CommentBox from './components/CommentBox'
+import React from "react"
+import ReactDOM from "react-dom"
+import CommentBox from "./components/CommentBox"
 
 function App() {
   return (
@@ -10,5 +10,5 @@ function App() {
   )
 }
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById("root")
 ReactDOM.render(<App />, rootElement)

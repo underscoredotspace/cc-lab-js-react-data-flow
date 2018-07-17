@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import CommentList from './CommentList'
-import CommentForm from './CommentForm'
+import React, { Component } from "react"
+import CommentList from "./CommentList"
+import CommentForm from "./CommentForm"
 
 export default class CommentBox extends Component {
   constructor(props) {
@@ -9,12 +9,12 @@ export default class CommentBox extends Component {
     this.state = {
       comments: [
         {
-          author: 'Brian',
-          text: 'Cool'
+          author: "Brian",
+          text: "Cool"
         },
         {
-          author: 'Jane',
-          text: 'No way'
+          author: "Jane",
+          text: "No way"
         }
       ]
     }
@@ -26,8 +26,8 @@ export default class CommentBox extends Component {
     comment.id = Date.now()
     const comments = this.state.comments
     comments.unshift(comment)
-    
-    this.setState({comments})
+
+    this.setState({ comments })
   }
 
   render() {

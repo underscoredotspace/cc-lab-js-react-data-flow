@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
 export default class CommentForm extends Component {
   constructor(props) {
     super(props)
-    
+
     this.state = {
-      author:'',
-      text: ''
+      author: "",
+      text: ""
     }
 
     this.handleAuthorChange = this.handleAuthorChange.bind(this)
@@ -15,11 +15,11 @@ export default class CommentForm extends Component {
   }
 
   handleAuthorChange(event) {
-    this.setState({author: event.target.value})
+    this.setState({ author: event.target.value })
   }
-  
+
   handleTextChange(event) {
-    this.setState({text: event.target.value})
+    this.setState({ text: event.target.value })
   }
 
   handleSubmit(event) {
@@ -27,12 +27,14 @@ export default class CommentForm extends Component {
     const author = this.state.author.trim()
     const text = this.state.text.trim()
 
-    if (!author || !text) { return }
+    if (!author || !text) {
+      return
+    }
 
-    this.props.onCommentSubmit({author, text})
-    this.setState({author: '', text: ''})
+    this.props.onCommentSubmit({ author, text })
+    this.setState({ author: "", text: "" })
   }
-  
+
   render() {
     return (
       <form className="comment-form" onSubmit={this.handleSubmit}>
