@@ -18,12 +18,22 @@ export default class CommentBox extends Component {
         }
       ]
     }
+
+    this.handleCommentSubmit = this.handleCommentSubmit.bind(this)
+  }
+
+  handleCommentSubmit(comment) {
+    comment.id = Date.now()
+    const comments = this.state.comments.concat([comment])
+    this.setState({comments})
   }
 
   render() {
     return (
       <div>
-        <CommentForm />
+        <h2>Add a comment</h2>
+        <CommentForm onCommentSubmit={this.handleCommentSubmit} />
+        <h2>Comment List</h2>
         <CommentList comments={this.state.comments} />
       </div>
     )
