@@ -24,7 +24,9 @@ export default class CommentBox extends Component {
 
   handleCommentSubmit(comment) {
     comment.id = Date.now()
-    const comments = this.state.comments.concat([comment])
+    const comments = this.state.comments
+    comments.unshift(comment)
+    
     this.setState({comments})
   }
 
